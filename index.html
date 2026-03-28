@@ -455,3 +455,66 @@ document.getElementById('lbPrev').onclick = function(e) { e.stopPropagation(); n
 document.getElementById('lbNext').onclick = function(e) { e.stopPropagation(); navigate(1); };
 
 document.addEventListener('keydown', functio
+
+<script>
+var keys = Object.keys(PROJECTS);
+var currentIdx = 0;
+
+function openProject(id) {
+  var p = PROJECTS[id];
+  if (!p) return;
+  currentIdx = keys.indexOf(id);
+
+  document.getElementById('lbHeroImg').src = p.hero;
+  document.getElementById('lbHeroImg').alt = p.title;
+  document.getElementById('lbTag').textContent = p.tag;
+  document.getElementById('lbDate').textContent = p.date;
+  document.getElementById('lbTitle').textContent = p.title;
+  document.getElementById('lbDesc').textContent = p.desc;
+  document.getElementById('lbBehance').href = p.url || '#';
+
+  var stats = document.getElementById('lbStats');
+  stats.innerHTML = '<span>♡ ' + p.likes + '</span><span>◎ ' + p.views + '</span>';
+
+  var lbImages = document.getElementById('lbImages');
+  if (p.images && p.images.length > 0) {
+    var grid = p.images.length > 1 ? '<div class="lb-images-grid">' : '<div class="lb-images">';
+    p.images.forEach(function(src) {
+      grid += '<img src="' + src + '" loading="lazy" alt="">';
+    });
+    grid += '</div>';
+    lbImages.innerHTML = grid;
+  } else {
+    lbImages.innerHTML = '';
+  }
+
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProject() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('lbClose').addEventListener('click', closeProject);
+document.getElementById('lbBackdrop').addEventListener('click', closeProject);
+
+document.getElementById('lbPrev').addEventListener('click', function() {
+  currentIdx = (currentIdx - 1 + keys.length) % keys.length;
+  openProject(keys[currentIdx]);
+});
+
+document.getElementById('lbNext').addEventListener('click', function() {
+  currentIdx = (currentIdx + 1) % keys.length;
+  openProject(keys[currentIdx]);
+});
+
+document.addEventListener('keydown', function(e) {
+  var lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeProject();
+  if (e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+  if (e.key === 'ArrowRight') document.getElementById('lbNext').click();
+});
+</script>
