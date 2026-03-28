@@ -1,3 +1,11 @@
+
+  <script>
+    (function(){
+      var u = 'mromieupro' + String.fromCharCode(64) + 'gmail.com';
+      var el = document.getElementById('contact-link');
+      if(el){ el.href = 'mai' + 'lto:' + u; el.textContent = u; }
+    })();
+  </script>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -129,7 +137,7 @@ footer p{font-size:11px;color:var(--muted);letter-spacing:.1em}
       <span class="eyebrow">Portfolio</span>
       <h1 class="name">Maxime<br><em>Romieu</em></h1>
       <p class="tagline">Graphic Designer · France</p>
-      <a href="/cdn-cgi/l/email-protection#78150a1715111d0d080a17381f15191114561b1715" class="contact-chip"><span class="__cf_email__" data-cfemail="036e716c6e6a667673716c43646e626a6f2d606c6e">[email&#160;protected]</span></a>
+      <a href="#" class="contact-chip" id="contact-link">contact</a>
     </div>
     <div class="photo-frame">
       <div class="photo-placeholder">
