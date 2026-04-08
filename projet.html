@@ -33,5 +33,9 @@
 
   <script src="js/projets.js"></script>
   <script src="js/projet.js"></script>
+  <script>
+  document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+  </script>
 </body>
 </html>

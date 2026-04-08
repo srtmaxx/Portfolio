@@ -74,6 +74,7 @@ const projets = [
     credit: 'Photography Collection',
     description: "MADEIRA<br>The Fanal Forest<br><br>Here are the most beautiful photos I was able to take during my stay in Madeira. This is the Fanal forest located in Seixal. The atmosphere is so mystical and calm, with a thick fog hanging through it, and cows have taken up residence there. It's a timeless place, and I was able to capture these photos which perfectly convey the moment.",
     galerieGridCount: 14,
+    imagePositions: { 7: 'top center' },
     images: [
       'assets/projets/fanal-forest/cover.webp',
       'assets/projets/fanal-forest/image-1.webp',

@@ -15,6 +15,7 @@
 
   var videoIndex = 0;
   var coverImages = projet.coverImages || [];
+  var imagePositions = projet.imagePositions || {};
 
   function renderMedia(src, titre, index) {
     if (/\.mp4$/i.test(src)) {
@@ -27,7 +28,8 @@
         + '</div>';
     }
     var cls = coverImages.indexOf(index) !== -1 ? ' class="img-cover"' : '';
-    return '<img src="' + src + '" alt="' + titre + ' — ' + index + '" loading="lazy"' + cls + '>';
+    var style = imagePositions[index] ? ' style="object-position:' + imagePositions[index] + '"' : '';
+    return '<img src="' + src + '" alt="' + titre + ' — ' + index + '" loading="lazy"' + cls + style + '>';
   }
 
   // Header
