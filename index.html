@@ -3,26 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Maxime Romieu, designer graphique et directeur artistique basé en France — branding, identité visuelle et photographie.">
-<title>Maxime Romieu | Graphic Designer</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="description" content="Je suis Maxime Romieu, Directeur Artistique, Designer Graphique & Motion Designer :)">
+<title>Maxime Romieu</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta property="og:title" content="Maxime Romieu">
+    <meta property="og:description" content="Je suis Maxime Romieu, Directeur Artistique, Designer Graphique & Motion Designer :)">
+    <meta property="og:url" content="https://maximeromieu.fr">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0908;--cream:#ffffff;--warm:#e06060;--accent:#d52122;--dark:#1a1714}
+:root{--bg:#000000;--cream:#ffffff;--warm:#e06060;--accent:#8b2fc9;--dark:#1a1714}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--cream);font-family:'Cormorant Garamond',serif;cursor:none;overflow-x:hidden}
 #cursor{position:fixed;width:10px;height:10px;background:var(--cream);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .3s,height .3s;mix-blend-mode:difference}
 #cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,224,213,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .18s ease-out,width .3s,height .3s}
 body:has(a:hover) #cursor{width:6px;height:6px}
 body:has(a:hover) #cursor-ring{width:60px;height:60px;border-color:var(--accent)}
-nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:28px 48px}
-nav::before{content:'';position:absolute;inset:0;height:160%;background:linear-gradient(to bottom,rgba(10,9,8,.35) 0%,rgba(10,9,8,.08) 50%,transparent 100%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask-image:linear-gradient(to bottom,black 0%,transparent 100%);mask-image:linear-gradient(to bottom,black 0%,transparent 100%);pointer-events:none;z-index:-1}
-.nav-logo{text-decoration:none;display:flex;align-items:center}.nav-logo-img{height:32px;width:auto;display:block}
-.nav-links{display:flex;gap:40px;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:#000}
+.nav-logo{text-decoration:none;display:flex;align-items:center}.nav-logo-img{height:26px;width:auto;display:block}
+.nav-links{display:flex;gap:40px;list-style:none;margin-left:auto}
 .nav-links a{font-family:'DM Mono',monospace;font-size:.68rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);text-decoration:none;position:relative;transition:color .3s}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--cream);transition:width .4s ease}
 .nav-links a:hover{color:var(--cream)}
@@ -60,7 +67,7 @@ nav::before{content:'';position:absolute;inset:0;height:160%;background:linear-g
 .hero-available span:last-child{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,247,229,.4)}
 .hero-dot-pulse{width:6px;height:6px;border-radius:50%;background:#4caf50;display:inline-block;animation:pulse 2s infinite;flex-shrink:0}
 .section-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);padding:0 48px}
-#work{padding-top:1px;background:var(--bg);position:relative;z-index:1}
+#work{background:var(--bg);position:relative;z-index:1;padding-top:58px}
 .project-item{display:grid;grid-template-columns:1fr 1fr;min-height:520px;border-top:1px solid rgba(232,224,213,.08);overflow:hidden}
 .project-item:nth-child(even){direction:rtl}
 .project-item:nth-child(even)>*{direction:ltr}
@@ -72,7 +79,7 @@ nav::before{content:'';position:absolute;inset:0;height:160%;background:linear-g
 .project-year{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
 .project-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,5.5rem);line-height:.9;letter-spacing:.02em;color:var(--cream);margin-bottom:20px}
 .project-type{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--warm);margin-bottom:20px;line-height:1.5}
-.project-stats{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:rgba(213,33,34,.5);margin-bottom:32px}
+.project-stats{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:rgba(139,47,201,.5);margin-bottom:32px}
 .project-link{display:inline-flex;align-items:center;gap:16px;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;position:relative;width:fit-content}
 .project-link::before{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:1px;background:var(--cream);transform:scaleX(.3);transform-origin:left;transition:transform .4s cubic-bezier(.16,1,.3,1)}
 .project-link:hover::before{transform:scaleX(1)}
@@ -84,16 +91,16 @@ nav::before{content:'';position:absolute;inset:0;height:160%;background:linear-g
 .logo-item:hover{color:var(--warm)}
 .logo-dot{width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
 #contact{padding:160px 48px 100px;text-align:center;position:relative;overflow:hidden}
-.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(213,33,34,.12) 0%,transparent 65%)}
+.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(139,47,201,.12) 0%,transparent 65%)}
 .contact-flicker-a,.contact-flicker-b,.contact-flicker-c,
 .hero-flicker-a,.hero-flicker-b,.hero-flicker-c{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);border-radius:50%;pointer-events:none}
-.hero-flicker-a{width:140%;height:320px;background:rgba(213,33,34,.28);filter:blur(100px);animation:flicker1 12s ease-in-out infinite}
-.hero-flicker-b{width:900px;height:200px;background:rgba(220,60,30,.38);filter:blur(75px);animation:flicker2 9s ease-in-out infinite}
-.hero-flicker-c{width:460px;height:120px;background:rgba(255,100,40,.5);filter:blur(50px);animation:flicker3 7s ease-in-out infinite}
+.hero-flicker-a{width:140%;height:320px;background:rgba(139,47,201,.28);filter:blur(100px);animation:flicker1 12s ease-in-out infinite}
+.hero-flicker-b{width:900px;height:200px;background:rgba(139,47,201,.38);filter:blur(75px);animation:flicker2 9s ease-in-out infinite}
+.hero-flicker-c{width:460px;height:120px;background:rgba(139,47,201,.5);filter:blur(50px);animation:flicker3 7s ease-in-out infinite}
 #hero-embers-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
-.contact-flicker-a{width:120%;height:220px;background:rgba(213,33,34,.28);filter:blur(80px);animation:flicker1 12s ease-in-out infinite}
-.contact-flicker-b{width:700px;height:140px;background:rgba(220,60,30,.38);filter:blur(60px);animation:flicker2 9s ease-in-out infinite}
-.contact-flicker-c{width:340px;height:80px;background:rgba(255,100,40,.5);filter:blur(40px);animation:flicker3 7s ease-in-out infinite}
+.contact-flicker-a{width:120%;height:220px;background:rgba(139,47,201,.28);filter:blur(80px);animation:flicker1 12s ease-in-out infinite}
+.contact-flicker-b{width:700px;height:140px;background:rgba(139,47,201,.38);filter:blur(60px);animation:flicker2 9s ease-in-out infinite}
+.contact-flicker-c{width:340px;height:80px;background:rgba(139,47,201,.5);filter:blur(40px);animation:flicker3 7s ease-in-out infinite}
 @keyframes flicker1{0%{opacity:.28;transform:translateX(-50%) scaleX(1)}8%{opacity:.22;transform:translateX(-51%) scaleX(.97)}19%{opacity:.3;transform:translateX(-49%) scaleX(1.03)}27%{opacity:.18;transform:translateX(-52%) scaleX(.93)}41%{opacity:.26;transform:translateX(-50%) scaleX(1.01)}55%{opacity:.14;transform:translateX(-51%) scaleX(.96)}63%{opacity:.3;transform:translateX(-49%) scaleX(1.04)}74%{opacity:.2;transform:translateX(-50%) scaleX(.98)}88%{opacity:.28;transform:translateX(-51%) scaleX(1.02)}100%{opacity:.28;transform:translateX(-50%) scaleX(1)}}
 @keyframes flicker2{0%{opacity:.4;transform:translateX(-50%) scaleX(1)}11%{opacity:.28;transform:translateX(-51%) scaleX(.92)}24%{opacity:.44;transform:translateX(-48%) scaleX(1.06)}36%{opacity:.22;transform:translateX(-52%) scaleX(.9)}49%{opacity:.38;transform:translateX(-50%) scaleX(1.03)}61%{opacity:.18;transform:translateX(-51%) scaleX(.95)}73%{opacity:.42;transform:translateX(-49%) scaleX(1.05)}86%{opacity:.24;transform:translateX(-50%) scaleX(.97)}100%{opacity:.4;transform:translateX(-50%) scaleX(1)}}
 @keyframes flicker3{0%{opacity:.55;transform:translateX(-50%) scaleX(1)}14%{opacity:.32;transform:translateX(-49%) scaleX(.88)}29%{opacity:.6;transform:translateX(-51%) scaleX(1.09)}43%{opacity:.28;transform:translateX(-50%) scaleX(.92)}58%{opacity:.5;transform:translateX(-49%) scaleX(1.06)}70%{opacity:.22;transform:translateX(-51%) scaleX(.86)}84%{opacity:.55;transform:translateX(-50%) scaleX(1.08)}100%{opacity:.55;transform:translateX(-50%) scaleX(1)}}
@@ -107,7 +114,7 @@ footer{background:var(--bg);flex-direction:row;justify-content:space-between;ali
 .contact-btn{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:16px 36px;text-decoration:none;transition:background .3s,color .3s,transform .3s}
 .contact-btn:hover{background:var(--accent);color:var(--cream);transform:translateY(-2px)}
 .contact-btn.outline{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.3)}
-.contact-btn.outline:hover{background:var(--dark);border-color:var(--accent)}
+.contact-btn.outline:hover{background:var(--accent);color:var(--cream);border-color:var(--accent)}
 footer{padding:40px 48px;border-top:1px solid rgba(232,224,213,.08);display:flex;justify-content:space-between;align-items:center}
 footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:rgba(255,255,255,.3);text-transform:uppercase}
 .footer-links{display:flex;gap:32px;list-style:none}
@@ -120,7 +127,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
 .reveal-delay-3{transition-delay:.32s}
 .project-item{cursor:pointer}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,224,213,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(232,224,213,.05) 1px,transparent 1px);background-size:80px 80px;background-position:center center;z-index:0}
-.hero-vline{position:absolute;top:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent 0%,rgba(213,33,34,.22) 18%,rgba(213,33,34,.22) 82%,transparent 100%);z-index:0}
+.hero-vline{position:absolute;top:0;width:1px;height:100%;background:linear-gradient(to bottom,transparent 0%,rgba(139,47,201,.22) 18%,rgba(139,47,201,.22) 82%,transparent 100%);z-index:0}
 .hero-deco{position:absolute;left:-2%;bottom:-4%;height:clamp(14rem,54vw,56rem);width:auto;opacity:.18;z-index:0;pointer-events:none;user-select:none}
 .lb{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s ease}
 .lb.open{opacity:1;pointer-events:all}
@@ -131,11 +138,11 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
 .lb-content{padding:40px 52px 48px;overflow-y:auto}
 .lb-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .lb-tag{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
-.lb-year{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:rgba(213,33,34,.35)}
+.lb-year{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:rgba(139,47,201,.35)}
 .lb-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);line-height:.88;color:var(--cream);margin-bottom:18px}
-.lb-desc{font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.75;color:var(--warm);margin-bottom:36px;padding-left:20px;border-left:2px solid rgba(213,33,34,.35);font-style:italic}
+.lb-desc{font-family:'Cormorant Garamond',serif;font-size:1.05rem;line-height:1.75;color:var(--warm);margin-bottom:36px;padding-left:20px;border-left:2px solid rgba(139,47,201,.35);font-style:italic}
 .lb-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
-.lb-stats{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:rgba(213,33,34,.35)}
+.lb-stats{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:rgba(139,47,201,.35)}
 .lb-cta{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:12px 28px;text-decoration:none;transition:background .3s,color .3s}
 .lb-cta:hover{background:var(--accent);color:var(--cream)}
 .lb-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border:1px solid rgba(232,224,213,.15);border-radius:50%;background:transparent;color:rgba(232,224,213,.7);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s;font-family:'DM Mono',monospace;z-index:10;line-height:1}
@@ -143,11 +150,23 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
 .lb-nav{position:absolute;top:28%;transform:translateY(-50%);width:40px;height:40px;border:1px solid rgba(232,224,213,.15);border-radius:50%;background:rgba(10,9,8,.55);color:rgba(232,224,213,.7);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s,background .3s;z-index:10}
 .lb-nav:hover{border-color:var(--warm);color:var(--cream);background:rgba(20,15,10,.85)}
 .lb-prev{left:14px}.lb-next{right:14px}
+.burger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:101}
+.burger span{display:block;width:100%;height:1px;background:var(--cream);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .25s,width .35s}
+.burger.active span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0;width:0}
+.burger.active span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;pointer-events:none;opacity:0;transform:translateY(-12px);transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+.mobile-menu.open{opacity:1;transform:translateY(0);pointer-events:all}
+.mobile-links{list-style:none;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:48px}
+.mobile-link{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,14vw,5.5rem);line-height:1;letter-spacing:.04em;color:var(--cream);text-decoration:none;display:block;transition:color .25s}
+.mobile-link:hover{color:var(--accent)}
+.mobile-cta{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:14px 32px;text-decoration:none;transition:background .3s,color .3s}
+.mobile-cta:hover{background:var(--accent);color:var(--cream)}
 @media(max-width:768px){
   #cursor,#cursor-ring{display:none}
   body{cursor:auto}
   .hero-profile,.hero-profile-overlay{display:none}
-  nav{padding:20px 24px}.nav-links{display:none}
+  nav{padding:20px 24px}.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}
   #hero{padding:120px 24px 60px;min-height:auto;justify-content:flex-start}
   .hero-sub{position:relative;bottom:auto;right:auto;text-align:left;margin-top:16px;max-width:100%}
   .scroll-hint{display:none}
@@ -174,53 +193,20 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
   <a href="#" class="nav-logo"><img src="SVG/logo.svg" alt="Maxime Romieu" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="#work">Projets</a></li>
+    <li><a href="a-propos.html">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://www.behance.net/maximeromieu" target="_blank" rel="noopener" class="nav-cta">Voir Behance</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-flicker-a"></div>
-  <div class="hero-flicker-b"></div>
-  <div class="hero-flicker-c"></div>
-  <canvas id="hero-embers-canvas"></canvas>
-
-  <img src="SVG/logo-deco.svg" class="hero-deco" alt="" aria-hidden="true">
-  <img src="profile cutted paper.webp" alt="Maxime Romieu" class="hero-profile">
-  <div class="hero-disciplines reveal">
-    <span>Identité visuelle</span><span class="hero-disc-sep">·</span>
-    <span>Motion Design</span><span class="hero-disc-sep">·</span>
-    <span>Photographie</span>
-  </div>
-  <h1 class="hero-title">
-    <span>Graphisme</span>
-    <span>&amp; Direction</span>
-    <span>Artistique</span>
-  </h1>
-  <div class="statement reveal">
-    <p>En combinant <em>vision artistique et maîtrise technique</em>, je crée des visuels en cohérence avec les valeurs de votre marque.</p>
-  </div>
-</section>
-<div class="logo-strip" style="border-bottom:none">
-  <div class="logo-track">
-    <span class="logo-item">MAYABAY</span><div class="logo-dot"></div>
-    <span class="logo-item">FLOW CYCLING</span><div class="logo-dot"></div>
-    <span class="logo-item">FORTICHE STUDIO</span><div class="logo-dot"></div>
-    <span class="logo-item">ZERO</span><div class="logo-dot"></div>
-    <span class="logo-item">ATLAS</span><div class="logo-dot"></div>
-    <span class="logo-item">FANAL FOREST</span><div class="logo-dot"></div>
-    <span class="logo-item">GRAND PRIX</span><div class="logo-dot"></div>
-    <span class="logo-item">SRO FESTIVAL</span><div class="logo-dot"></div>
-    <span class="logo-item">MAYABAY</span><div class="logo-dot"></div>
-    <span class="logo-item">FLOW CYCLING</span><div class="logo-dot"></div>
-    <span class="logo-item">FORTICHE STUDIO</span><div class="logo-dot"></div>
-    <span class="logo-item">ZERO</span><div class="logo-dot"></div>
-    <span class="logo-item">ATLAS</span><div class="logo-dot"></div>
-    <span class="logo-item">FANAL FOREST</span><div class="logo-dot"></div>
-    <span class="logo-item">GRAND PRIX</span><div class="logo-dot"></div>
-    <span class="logo-item">SRO FESTIVAL</span><div class="logo-dot"></div>
-  </div>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <ul class="mobile-links">
+    <li><a href="#work" class="mobile-link">Projets</a></li>
+    <li><a href="a-propos.html" class="mobile-link">À propos</a></li>
+    <li><a href="#contact" class="mobile-link">Contact</a></li>
+  </ul>
+  <a href="https://www.behance.net/maximeromieu" target="_blank" rel="noopener" class="mobile-cta">Voir Behance</a>
 </div>
 <section id="work">
 <div class="grille-projets" id="grille-projets"></div>
@@ -256,8 +242,8 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
   <div class="contact-links reveal reveal-delay-1">
     <a href="mailto:mromieupro@gmail.com" class="contact-btn">Envoyer un email</a>
     <a href="https://www.linkedin.com/in/maximeromieu/" target="_blank" rel="noopener" class="contact-btn outline">LinkedIn</a>
-
     <a href="https://instagram.com/maxime.romieu" target="_blank" rel="noopener" class="contact-btn outline">Instagram</a>
+    <a href="https://www.behance.net/maximeromieu" target="_blank" rel="noopener" class="contact-btn outline">Behance</a>
   </div>
 </section>
 <footer>
@@ -266,6 +252,23 @@ footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;c
 </footer>
 <script src="js/projets.js"></script>
 <script>
+// Burger menu
+(function(){
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('mobile-menu');
+  if(!burger||!menu)return;
+  function toggleMenu(open){
+    burger.classList.toggle('active',open);
+    menu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+    menu.setAttribute('aria-hidden',!open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){toggleMenu(!menu.classList.contains('open'));});
+  menu.querySelectorAll('.mobile-link,.mobile-cta').forEach(function(el){
+    el.addEventListener('click',function(){toggleMenu(false);});
+  });
+})();
 // Curseur personnalisé
 const cursor=document.getElementById('cursor');
 const ring=document.getElementById('cursor-ring');
@@ -327,7 +330,7 @@ function initEmbers(canvasId, section, faClass, fbClass, fcClass){
       var alpha=e.life*e.opacity;
       ctx.beginPath();
       ctx.arc(e.x,e.y,e.size,0,Math.PI*2);
-      ctx.fillStyle='rgba(255,'+(100+Math.floor(Math.random()*60))+',40,'+alpha.toFixed(3)+')';
+      ctx.fillStyle='rgba(139,47,201,'+alpha.toFixed(3)+')';
       ctx.fill();
     }
     requestAnimationFrame(tick);
@@ -335,24 +338,6 @@ function initEmbers(canvasId, section, faClass, fbClass, fcClass){
   tick();
 }
 initEmbers('embers-canvas', document.getElementById('contact'), '.contact-flicker-a', '.contact-flicker-b', '.contact-flicker-c');
-initEmbers('hero-embers-canvas', document.getElementById('hero'), '.hero-flicker-a', '.hero-flicker-b', '.hero-flicker-c');
-// Tilt 3D sur la photo de profil
-(function(){
-  var profile=document.querySelector('.hero-profile');
-  if(!profile)return;
-  var overlay=document.createElement('div');
-  overlay.className='hero-profile-overlay';
-  document.getElementById('hero').appendChild(overlay);
-  overlay.addEventListener('mousemove',function(e){
-    var r=overlay.getBoundingClientRect();
-    var x=(e.clientX-r.left)/r.width-0.5;
-    var y=(e.clientY-r.top)/r.height-0.5;
-    profile.style.transform='perspective(3000px) rotateY('+(-x*6)+'deg) rotateX('+(y*4)+'deg)';
-  });
-  overlay.addEventListener('mouseleave',function(){
-    profile.style.transform='perspective(3000px) rotateY(0deg) rotateX(0deg)';
-  });
-})();
 // Pause au survol des bandeaux
 document.querySelectorAll('.filmstrip-track,.logo-track').forEach(function(track){track.addEventListener('mouseenter',function(){track.style.animationPlayState='paused';});track.addEventListener('mouseleave',function(){track.style.animationPlayState='running';});});
 // Génération des cartes projets
@@ -365,9 +350,9 @@ document.querySelectorAll('.filmstrip-track,.logo-track').forEach(function(track
     a.className='carte-projet reveal';
     a.innerHTML='<img src="'+p.images[0]+'" alt="'+p.titre+'">'
       +'<div class="carte-overlay">'
-      +'<span class="carte-overlay-cta">Voir le projet \u2192</span>'
       +'<p class="carte-titre">'+p.titre+'</p>'
       +'<p class="carte-categorie">'+p.categorie+'</p>'
+      +'<span class="carte-overlay-cta">Voir le projet \u2192</span>'
       +'</div>';
     g.appendChild(a);
     io.observe(a);
@@ -375,6 +360,16 @@ document.querySelectorAll('.filmstrip-track,.logo-track').forEach(function(track
 })();
 </script>
 <script>
+// Anti-veuves
+(function(){
+  function fixWidow(el){
+    var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    var last=null;
+    while(w.nextNode())last=w.currentNode;
+    if(last)last.textContent=last.textContent.replace(/\s+(\S+)\s*$/,'\u00A0$1');
+  }
+  document.querySelectorAll('.hero-title span,.contact-title,.project-title,.lb-title').forEach(fixWidow);
+})();
 document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
 document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
 </script>

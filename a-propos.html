@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="À propos de Maxime Romieu — Directeur Artistique, Designer Graphique et Motion Designer basé en France.">
+<title>À propos | Maxime Romieu</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+@font-face{font-family:'Piepie';src:url('fonts/Piepie-W01-Regular.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'SloopScriptPro';src:url('fonts/sloop-script-pro-bold.otf') format('opentype');font-weight:700;font-style:normal}
+@font-face{font-family:'NeueHaasGrotesk';src:url('fonts/NeueHaasDisplayMediu.ttf') format('truetype');font-weight:500;font-style:normal}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#000000;--cream:#ffffff;--warm:#e06060;--accent:#8b2fc9;--dark:#1a1714}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Cormorant Garamond',serif;cursor:none;overflow-x:hidden}
+#cursor{position:fixed;width:10px;height:10px;background:var(--cream);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s,width .3s,height .3s;mix-blend-mode:difference}
+#cursor-ring{position:fixed;width:36px;height:36px;border:1px solid rgba(232,224,213,.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .18s ease-out,width .3s,height .3s}
+body:has(a:hover) #cursor{width:6px;height:6px}
+body:has(a:hover) #cursor-ring{width:60px;height:60px;border-color:var(--accent)}
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:16px 48px;background:#000}
+.nav-logo{text-decoration:none;display:flex;align-items:center}.nav-logo-img{height:26px;width:auto;display:block}
+.nav-links{display:flex;gap:40px;list-style:none;margin-left:auto}
+.nav-links a{font-family:'DM Mono',monospace;font-size:.68rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);text-decoration:none;position:relative;transition:color .3s}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--cream);transition:width .4s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--cream)}
+.nav-cta{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:10px 20px;text-decoration:none;transition:background .3s,color .3s}
+.nav-cta:hover{background:var(--accent);color:var(--cream)}
+
+/* ── HERO ── */
+#about-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;position:relative;overflow:hidden;isolation:isolate;background:#000}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,#000 100%);z-index:0}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(232,224,213,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(232,224,213,.05) 1px,transparent 1px);background-size:80px 80px;background-position:center center;z-index:0;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 20%,black 45%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 20%,black 45%,transparent 100%)}
+.hero-flicker-a,.hero-flicker-b,.hero-flicker-c{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);border-radius:50%;pointer-events:none}
+.hero-flicker-a{width:140%;height:320px;background:rgba(139,47,201,.28);filter:blur(100px);animation:flicker1 12s ease-in-out infinite}
+.hero-flicker-b{width:900px;height:200px;background:rgba(139,47,201,.38);filter:blur(75px);animation:flicker2 9s ease-in-out infinite}
+.hero-flicker-c{width:460px;height:120px;background:rgba(139,47,201,.5);filter:blur(50px);animation:flicker3 7s ease-in-out infinite}
+#hero-embers-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.hero-deco{position:absolute;left:-2%;bottom:-4%;height:clamp(14rem,54vw,56rem);width:auto;opacity:.18;z-index:0;pointer-events:none;user-select:none}
+.hero-profile{position:absolute;right:0;bottom:0;height:92%;width:auto;object-fit:contain;object-position:bottom right;z-index:1;opacity:0;animation:fadeIn 1.2s .4s forwards;pointer-events:none;transform-origin:center center;transition:transform .12s ease-out;will-change:transform}
+.hero-profile-overlay{position:absolute;right:0;bottom:0;height:92%;width:50%;z-index:4;cursor:none}
+
+/* ── ABOUT CONTENT ── */
+.about-eyebrow{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,8vw,9rem);line-height:.9;letter-spacing:.04em;color:var(--cream);margin-bottom:16px}
+.about-content{position:absolute;top:50%;transform:translateY(-50%);left:48px;max-width:48%;z-index:3}
+.about-bio p{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.05;letter-spacing:.02em;color:var(--cream)}
+.about-bio em{font-style:normal;color:var(--accent)}
+
+/* ── IDENTITY STRIP ── */
+.about-identity{padding:80px 48px;text-align:right;position:relative;border-top:1px solid rgba(232,224,213,.08)}
+.about-identity-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,8rem);line-height:.9;letter-spacing:.02em;color:var(--cream)}
+.about-identity-role{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.4rem);color:var(--warm);margin-top:10px}
+
+/* ── CONTACT ── */
+#contact{padding:160px 48px 100px;text-align:center;position:relative;overflow:hidden}
+.contact-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 70%,rgba(139,47,201,.12) 0%,transparent 65%)}
+.contact-flicker-a,.contact-flicker-b,.contact-flicker-c{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);border-radius:50%;pointer-events:none}
+.contact-flicker-a{width:120%;height:220px;background:rgba(139,47,201,.28);filter:blur(80px);animation:flicker1 12s ease-in-out infinite}
+.contact-flicker-b{width:700px;height:140px;background:rgba(139,47,201,.38);filter:blur(60px);animation:flicker2 9s ease-in-out infinite}
+.contact-flicker-c{width:340px;height:80px;background:rgba(139,47,201,.5);filter:blur(40px);animation:flicker3 7s ease-in-out infinite}
+#embers-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.contact-eyebrow{font-family:'DM Mono',monospace;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:48px}
+.contact-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,10vw,12rem);line-height:.85;color:var(--cream);margin-bottom:48px;position:relative;z-index:1}
+.contact-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.contact-btn{display:inline-flex;align-items:center;gap:10px;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:16px 36px;text-decoration:none;transition:background .3s,color .3s,transform .3s}
+.contact-btn:hover{background:var(--accent);color:var(--cream);transform:translateY(-2px)}
+.contact-btn.outline{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,.3)}
+.contact-btn.outline:hover{background:var(--accent);color:var(--cream);border-color:var(--accent)}
+
+/* ── FOOTER ── */
+footer{padding:40px 48px;border-top:1px solid rgba(232,224,213,.08);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{height:22px;width:auto;opacity:.35;filter:brightness(10)}
+footer p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:rgba(255,255,255,.3);text-transform:uppercase}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.12s}
+.reveal-delay-2{transition-delay:.22s}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{to{opacity:1}}
+@keyframes flicker1{0%{opacity:.28;transform:translateX(-50%) scaleX(1)}8%{opacity:.22;transform:translateX(-51%) scaleX(.97)}19%{opacity:.3;transform:translateX(-49%) scaleX(1.03)}27%{opacity:.18;transform:translateX(-52%) scaleX(.93)}41%{opacity:.26;transform:translateX(-50%) scaleX(1.01)}55%{opacity:.14;transform:translateX(-51%) scaleX(.96)}63%{opacity:.3;transform:translateX(-49%) scaleX(1.04)}74%{opacity:.2;transform:translateX(-50%) scaleX(.98)}88%{opacity:.28;transform:translateX(-51%) scaleX(1.02)}100%{opacity:.28;transform:translateX(-50%) scaleX(1)}}
+@keyframes flicker2{0%{opacity:.4;transform:translateX(-50%) scaleX(1)}11%{opacity:.28;transform:translateX(-51%) scaleX(.92)}24%{opacity:.44;transform:translateX(-48%) scaleX(1.06)}36%{opacity:.22;transform:translateX(-52%) scaleX(.9)}49%{opacity:.38;transform:translateX(-50%) scaleX(1.03)}61%{opacity:.18;transform:translateX(-51%) scaleX(.95)}73%{opacity:.42;transform:translateX(-49%) scaleX(1.05)}86%{opacity:.24;transform:translateX(-50%) scaleX(.97)}100%{opacity:.4;transform:translateX(-50%) scaleX(1)}}
+@keyframes flicker3{0%{opacity:.55;transform:translateX(-50%) scaleX(1)}14%{opacity:.32;transform:translateX(-49%) scaleX(.88)}29%{opacity:.6;transform:translateX(-51%) scaleX(1.09)}43%{opacity:.28;transform:translateX(-50%) scaleX(.92)}58%{opacity:.5;transform:translateX(-49%) scaleX(1.06)}70%{opacity:.22;transform:translateX(-51%) scaleX(.86)}84%{opacity:.55;transform:translateX(-50%) scaleX(1.08)}100%{opacity:.55;transform:translateX(-50%) scaleX(1)}}
+
+.burger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:18px;background:none;border:none;cursor:pointer;padding:0;z-index:101}
+.burger span{display:block;width:100%;height:1px;background:var(--cream);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .25s,width .35s}
+.burger.active span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.burger.active span:nth-child(2){opacity:0;width:0}
+.burger.active span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:99;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;opacity:0;transform:translateY(-12px);transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+.mobile-menu.open{opacity:1;transform:translateY(0);pointer-events:all}
+.mobile-links{list-style:none;display:flex;flex-direction:column;align-items:center;gap:8px;margin-bottom:48px}
+.mobile-link{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,14vw,5.5rem);line-height:1;letter-spacing:.04em;color:var(--cream);text-decoration:none;display:block;transition:color .25s}
+.mobile-link:hover{color:var(--accent)}
+.mobile-cta{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--cream);padding:14px 32px;text-decoration:none;transition:background .3s,color .3s}
+.mobile-cta:hover{background:var(--accent);color:var(--cream)}
+@media(max-width:768px){
+  #cursor,#cursor-ring{display:none}
+  body{cursor:auto}
+  .hero-profile-overlay{display:none}
+  nav{padding:20px 24px}.nav-links{display:none}.nav-cta{display:none}.burger{display:flex}
+  #about-hero{padding:100px 24px 60px;min-height:auto;flex-direction:column;justify-content:flex-start}
+  .hero-profile{position:relative;right:auto;bottom:auto;width:90%;height:auto;margin:24px auto 0;opacity:1;animation:none}
+  .about-content{position:relative;top:auto;transform:none;left:auto;max-width:100%;padding-top:96px}
+  .about-bio p{font-size:clamp(1.05rem,4.2vw,1.4rem);line-height:1.5;text-align:justify}
+  .about-socials{flex-direction:column}
+  .about-identity{padding:60px 24px;text-align:center}
+  #contact{padding:100px 24px 80px}
+  footer{padding:32px 24px;flex-direction:column;gap:20px;text-align:center}
+}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="SVG/logo.svg" alt="Maxime Romieu" class="nav-logo-img"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#work">Projets</a></li>
+    <li><a href="a-propos.html" class="active">À propos</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <ul class="mobile-links">
+    <li><a href="index.html#work" class="mobile-link">Projets</a></li>
+    <li><a href="a-propos.html" class="mobile-link">À propos</a></li>
+    <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+  </ul>
+  <a href="https://www.behance.net/maximeromieu" target="_blank" rel="noopener" class="mobile-cta">Voir Behance</a>
+</div>
+
+<section id="about-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+<img src="profile cutted paper.webp" alt="Maxime Romieu" class="hero-profile">
+
+  <div class="about-content">
+<div class="about-bio reveal reveal-delay-1">
+      <p>Je m'appelle <span id="name-anim" style="color:#8b2fc9">Maxime Romieu</span>, je suis <span style="color:#8b2fc9">Directeur Artistique, Designer Graphique et Motion Designer</span>. Je façonne l'image des marques en concevant des <span style="color:#8b2fc9">identités visuelles complètes, des Motion Designs</span> et + selon les projets&nbsp;:)<br>En me confiant votre image je porterai une grande attention au détail et une exigence constante sur chaque image. Si nous travaillons ensemble, vous traiterez avec la personne qui <em>pense, cadre et produit</em> vos visuels.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-bg"></div>
+  <p class="contact-eyebrow reveal">Travaillons ensemble</p>
+  <h2 class="contact-title reveal">Contactez-moi ici</h2>
+  <div class="contact-flicker-a"></div>
+  <div class="contact-flicker-b"></div>
+  <div class="contact-flicker-c"></div>
+  <canvas id="embers-canvas"></canvas>
+  <div class="contact-links reveal reveal-delay-1">
+    <a href="mailto:mromieupro@gmail.com" class="contact-btn">Envoyer un email</a>
+    <a href="https://www.linkedin.com/in/maximeromieu/" target="_blank" rel="noopener" class="contact-btn outline">LinkedIn</a>
+    <a href="https://instagram.com/maxime.romieu" target="_blank" rel="noopener" class="contact-btn outline">Instagram</a>
+    <a href="https://www.behance.net/maximeromieu" target="_blank" rel="noopener" class="contact-btn outline">Behance</a>
+  </div>
+</section>
+
+<footer>
+  <img src="SVG/logo.svg" alt="Maxime Romieu" class="footer-logo">
+  <p>&copy; 2026 Maxime Romieu</p>
+</footer>
+
+<script>
+// Burger menu
+(function(){
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('mobile-menu');
+  if(!burger||!menu)return;
+  function toggleMenu(open){
+    burger.classList.toggle('active',open);
+    menu.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open);
+    menu.setAttribute('aria-hidden',!open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',function(){toggleMenu(!menu.classList.contains('open'));});
+  menu.querySelectorAll('.mobile-link,.mobile-cta').forEach(function(el){
+    el.addEventListener('click',function(){toggleMenu(false);});
+  });
+})();
+// Curseur personnalisé
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;});
+function animateCursor(){cursor.style.left=mx+'px';cursor.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateCursor);}
+animateCursor();
+// Animations au défilement
+const io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+// Braises
+function initEmbers(canvasId,section,faClass,fbClass,fcClass){
+  var canvas=document.getElementById(canvasId);
+  if(!canvas||!section)return;
+  var ctx=canvas.getContext('2d');
+  var embers=[];
+  function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+  resize();
+  window.addEventListener('resize',resize);
+  var fa=section.querySelector(faClass);
+  var fb=section.querySelector(fbClass);
+  var fc=section.querySelector(fcClass);
+  var mouseX=-1,mouseY=-1;
+  var tlx=50,tly=0,clx=50,cly=0;
+  section.addEventListener('mousemove',function(e){
+    var r=canvas.getBoundingClientRect();
+    mouseX=e.clientX-r.left;mouseY=e.clientY-r.top;
+    tlx=(mouseX/canvas.width)*100;
+    tly=((mouseY/canvas.height)-1)*60;
+  });
+  section.addEventListener('mouseleave',function(){mouseX=-1;mouseY=-1;tlx=50;tly=0;});
+  function spawn(){
+    embers.push({x:canvas.width*(.2+Math.random()*.6),y:canvas.height+4,vx:(Math.random()-.5)*.4,vy:-(Math.random()*.6+.3),size:Math.random()*2.6+.7,opacity:Math.random()*.5+.3,drift:Math.random()*Math.PI*2,driftSpeed:Math.random()*.015+.005,life:1});
+  }
+  var spawnTimer=0;
+  function tick(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    clx+=(tlx-clx)*.04;cly+=(tly-cly)*.04;
+    var ox=(clx-50)*0.55;
+    if(fa)fa.style.transform='translateX(calc(-50% + '+ox.toFixed(1)+'px)) translateY('+cly.toFixed(1)+'px)';
+    if(fb)fb.style.transform='translateX(calc(-50% + '+(ox*.7).toFixed(1)+'px)) translateY('+(cly*.6).toFixed(1)+'px)';
+    if(fc)fc.style.transform='translateX(calc(-50% + '+(ox*.4).toFixed(1)+'px)) translateY('+(cly*.3).toFixed(1)+'px)';
+    spawnTimer++;
+    if(spawnTimer>13){spawnTimer=0;if(Math.random()<.75)spawn();}
+    for(var i=embers.length-1;i>=0;i--){
+      var e=embers[i];
+      e.drift+=e.driftSpeed;
+      e.x+=e.vx+Math.sin(e.drift)*.35;e.y+=e.vy;e.life-=.004;
+      if(e.life<=0||e.y<-10){embers.splice(i,1);continue;}
+      if(mouseX>=0){var mdx=e.x-mouseX,mdy=e.y-mouseY,mdist=Math.sqrt(mdx*mdx+mdy*mdy);if(mdist<140&&mdist>0){var f=(.5/mdist);e.vx+=mdx*f*.06;e.vy+=mdy*f*.06;}}
+      var alpha=e.life*e.opacity;
+      ctx.beginPath();ctx.arc(e.x,e.y,e.size,0,Math.PI*2);
+      ctx.fillStyle='rgba(139,47,201,'+alpha.toFixed(3)+')';
+      ctx.fill();
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+}
+initEmbers('embers-canvas',document.getElementById('contact'),'.contact-flicker-a','.contact-flicker-b','.contact-flicker-c');
+// Tilt 3D sur la photo de profil
+(function(){
+  var profile=document.querySelector('.hero-profile');
+  if(!profile)return;
+  var overlay=document.createElement('div');
+  overlay.className='hero-profile-overlay';
+  document.getElementById('about-hero').appendChild(overlay);
+  overlay.addEventListener('mousemove',function(e){
+    var r=overlay.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-0.5;
+    var y=(e.clientY-r.top)/r.height-0.5;
+    profile.style.transform='perspective(3000px) rotateY('+(-x*6)+'deg) rotateX('+(y*4)+'deg)';
+  });
+  overlay.addEventListener('mouseleave',function(){
+    profile.style.transform='perspective(3000px) rotateY(0deg) rotateX(0deg)';
+  });
+})();
+// Anti-veuves
+(function(){
+  function fixWidow(el){
+    var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    var last=null;
+    while(w.nextNode())last=w.currentNode;
+    if(last)last.textContent=last.textContent.replace(/\s+(\S+)\s*$/,'\u00A0$1');
+  }
+  document.querySelectorAll('.about-bio p,.contact-title').forEach(fixWidow);
+})();
+document.addEventListener('contextmenu',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+document.addEventListener('dragstart',function(e){if(e.target.tagName==='IMG')e.preventDefault();});
+</script>
+</body>
+</html>

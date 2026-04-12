@@ -1,9 +1,9 @@
 const projets = [
   {
     id: 'mayabay',
-    titre: 'MAYABAY',
+    titre: 'CARTE COCKTAIL MAYABAY 2026',
     categorie: 'Design éditorial',
-    annee: '2024',
+    annee: '2026',
     description: "MayaBay is a restaurant renowned for its Thai and Japanese cuisine and its elegant atmosphere. The story began 19 years ago with the opening of the first restaurant in Monaco. Today, MayaBay is present in Monaco, Courchevel, Dubai and Porto Montenegro, offering a refined dining experience inspired by the flavors of Asia. Where modernity meets tradition.<br><br>In this context, I had to design the new 2026 dedicated cocktail menu. The objective was to structure and highlight the establishment's mixology offering while creating a graphic support consistent with MayaBay's visual identity and atmosphere.",
     credit: "Project designed at Maya Collection",
     images: [
@@ -155,6 +155,7 @@ const projets = [
       { start: 19, count: 2, cols: 2, natural: true }
     ],
     coverImages: [2, 4, 8, 12, 15, 16, 18, 19],
+    imageRotations: {20: '90deg'},
     images: [
       'assets/projets/china-2024/cover.webp',
       'assets/projets/china-2024/image-1.webp',

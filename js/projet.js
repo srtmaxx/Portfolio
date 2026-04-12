@@ -10,12 +10,15 @@
 
   document.title = projet.titre + ' | Maxime Romieu';
   document.getElementById('btn-behance').href = projet.behance;
+  var mobileBehance = document.getElementById('mobile-behance');
+  if(mobileBehance) mobileBehance.href = projet.behance;
 
   var html = '';
 
   var videoIndex = 0;
   var coverImages = projet.coverImages || [];
   var imagePositions = projet.imagePositions || {};
+  var imageRotations = projet.imageRotations || {};
 
   function renderMedia(src, titre, index) {
     if (/\.mp4$/i.test(src)) {
@@ -27,8 +30,13 @@
         + '<button class="video-sound-btn" data-vid="' + vid + '">SOUND OFF</button>'
         + '</div>';
     }
+    if (imageRotations[index]) {
+      return '<div class="img-rot90-wrap"><img src="' + src + '" alt="' + titre + ' — ' + index + '" loading="lazy"></div>';
+    }
     var cls = coverImages.indexOf(index) !== -1 ? ' class="img-cover"' : '';
-    var style = imagePositions[index] ? ' style="object-position:' + imagePositions[index] + '"' : '';
+    var styleVal = '';
+    if (imagePositions[index]) styleVal += 'object-position:' + imagePositions[index] + ';';
+    var style = styleVal ? ' style="' + styleVal + '"' : '';
     return '<img src="' + src + '" alt="' + titre + ' — ' + index + '" loading="lazy"' + cls + style + '>';
   }
 
@@ -140,6 +148,19 @@
   }
 
   document.getElementById('contenu-projet').innerHTML = html;
+
+  // Rotation 90° sans crop : adapter le wrapper aux dimensions réelles de l'image
+  document.querySelectorAll('.img-rot90-wrap img').forEach(function(img) {
+    function applyRot() {
+      var r = img.naturalWidth / img.naturalHeight; // > 1 si paysage
+      var wrap = img.parentElement;
+      wrap.style.aspectRatio = '1/' + r;
+      img.style.height = (100 / r).toFixed(4) + '%';
+      img.style.width = 'auto';
+    }
+    if (img.complete && img.naturalWidth > 0) { applyRot(); }
+    else { img.addEventListener('load', applyRot); }
+  });
 
   // Boutons son pour les vidéos mp4
   document.querySelectorAll('.video-sound-btn').forEach(function(btn) {
