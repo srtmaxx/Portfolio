@@ -9,9 +9,6 @@
   }
 
   document.title = projet.titre + ' | Maxime Romieu';
-  document.getElementById('btn-behance').href = projet.behance;
-  var mobileBehance = document.getElementById('mobile-behance');
-  if(mobileBehance) mobileBehance.href = projet.behance;
 
   var html = '';
 
